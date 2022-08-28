@@ -1,0 +1,49 @@
+.orientation {
+    position: relative;
+}
+
+.orientation::before {
+    content: '';
+    background-image: url('accest/arrow_hor.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+}
+
+.orientation.hor::before {
+    background-image: url('accest/arrow_hor.svg');
+}
+
+.orientation.ver::before {
+    background-image: url('accest/arrow_ver.svg');
+}
+
+.orientation.block.right::before {
+    transform: rotate(180deg);
+}
+
+.orientation.block {
+    padding-inline-start: 24px;
+}
+
+.orientation.block::before {
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    block-size: 100%;
+    inline-size: 24px;
+}
+
+.orientation.inline {
+    padding-block-start: 24px;
+}
+
+.orientation.inline::before {
+    inset-block-start: 0;
+    block-size: 24px;
+    inline-size: 100%;
+}
+
+.orientation.inline.left::before {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,23 @@
+.example_border {
+    border-inline-start: 5px solid lavender;
+    padding-inline-start: 10px;
+}
+
+.activeList * {
+    opacity: 0.5;
+}
+
+.activeList .active {
+    opacity: initial;
+}
+
+.border {
+    border: 0.1em solid;
+}
+
+.example {
+    margin: 0.5em;
+    padding: 0.3em;
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,15 @@
+.slide pre code {
+    font-family: Menlo;
+}
+
+.slide pre code:not(:only-child)::before {
+    content: counter(code, decimal-leading-zero);
+}
+
+.no-code::before {
+    display: none;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}

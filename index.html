@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="./global_style.css">
+    <link rel="stylesheet" href="./local_style.css">
+    <link rel="stylesheet" href="./my_theme.css">
+    <link rel="stylesheet" href="./orientation.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Режимы написания и их поддержка</h1>
+        <p>София Валитова, CSS-инженер</p>
+    </header>
+
+    <section class="slide blog" id="myself">
+        <img src="accest/blog.png" alt="" class="full_image">
+        <h2 class="shout" style="">Меня зовут София. Я - CSS инженер.</h2>
+    </section>
+
+    <section class="slide" id="head">
+        <h2 class="shout shrink small">
+            <span class="a">RTL</span>
+            <span class="b">это</span>
+            <span class="c">правда</span>
+            <span class="d">очень</span>
+            <span class="e">просто</span>
+        </h2>
+        <style>
+            #head span {
+                font-size: 0.8em;
+            }
+
+            #head .a {
+                writing-mode: vertical-lr;
+                text-orientation: upright;
+                font-weight: bold;
+            }
+
+            #head .b {
+                vertical-align: bottom;
+            }
+
+            #head .c {
+                writing-mode: sideways-lr;
+            }
+
+            #head .d {
+                vertical-align: top;
+            }
+
+            #head .e {
+                writing-mode: sideways-rl;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Мы будем говорить про:</h2>
+        <ul>
+            <li>режимы написания текста</li>
+            <li>их поддержку в интерфейсах</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">7151 язык</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">120-500 письменностей</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">4 режима письма</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Слева направо cверху вниз</h2>
+        <div></div>
+    </section>
+    <section class="slide">
+        <h2>Справа налево cверху вниз </h2>
+    </section>
+    <section class="slide">
+        <h2>Сверху вниз справа налево</h2>
+    </section>
+    <section class="slide">
+        <h2>Сверху вниз слева направо</h2>
+        <img src="/accest/mongolian_site.png" alt="" class="full_image" style="width: 60%; margin-top: 2.5em">
+    </section>
+
+    <section class="slide">
+        <h2>Простой пример</h2>
+        <div style="font-size: 2em; margin-top: 1em" class="next">
+            <p class="example_border" dir="ltr">Large eggplants run after people in their dreams</p>
+            <p class="example_border" dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Стили для английского:</h2>
+        <pre>
+            <code>p { border-left: 5px solid lavender; }</code>
+        </pre>
+        <h2>Стили для арабского:</h2>
+        <pre>
+            <code>p { border-right: 5px solid lavender; }</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Берём <a href="https://www.npmjs.com/package/postcss-rtl">PostCSS плагин</a>:</h2>
+        <pre class="small">
+            <code>[dir] div {</code>
+            <code>  border-color: lavender;</code>
+            <code>  border-width: 3px;</code>
+            <code>}</code>
+            <code>[dir="ltr"] div {</code>
+            <code>  border-left-style: solid;</code>
+            <code>}</code>
+            <code>[dir="rtl"] div {</code>
+            <code>  border-right-style: solid;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Если делать это руками:</h2>
+        <pre class="small">
+            <code>div {</code>
+            <code>  border-color: lavender;</code>
+            <code>  border-width: 3px;</code>
+            <code>}</code>
+            <code>div:dir(lrt) {</code>
+            <code>  border-left-style: solid;</code>
+            <code>}</code>
+            <code>div:dir(rtl) {</code>
+            <code>  border-right-style: solid;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>У <code>:dir()</code> плохая поддержка</h2>
+        <img src="./accest/dir_can_i_use.png" alt="" class="full_image" style="margin-top: 2em">
+    </section>
+
+    <section class="slide">
+        <h2>В общем, оба варианта громоздкие :((</h2>
+        <div class="columns two">
+            <pre class="smallest">
+                <code>[dir] div {</code>
+                <code>  border-color: lavender;</code>
+                <code>  border-width: 3px;</code>
+                <code>}</code>
+                <code>[dir="ltr"] div {</code>
+                <code>  border-left-style: solid;</code>
+                <code>}</code>
+                <code>[dir="rtl"] div {</code>
+                <code>  border-right-style: solid;</code>
+                <code>}</code>
+            </pre>
+            <pre class="smallest">
+                <code>div {</code>
+                <code>  border-color: lavender;</code>
+                <code>  border-width: 3px;</code>
+                <code>}</code>
+                <code>div:dir(lrt) {</code>
+                <code>  border-left-style: solid;</code>
+                <code>}</code>
+                <code>div:dir(rtl) {</code>
+                <code>  border-right-style: solid;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">А почему у нас вообще есть такие проблемы?</h2>
+    </section>
+
+    <section class="slide" id="physical_coords">
+        <h2>Физическая система координат</h2>
+        <div style="text-align: center">верх</div>
+        <div style="text-align: right">право</div>
+        <div style="text-align: left">лево</div>
+        <div style="text-align: center">низ</div>
+        <style>
+            #physical_coords div {
+                height: 20%;
+                font-size: 40px;
+                font-weight: bold;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Плохо подходит для текста</h2>
+
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">Как можно описать режим письма?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Направление потока блоков</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Ориентация строки</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Направление строки</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">Как можно влиять на эти три оси?</h2>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li class="active">horizontal-tb</li>
+                <li>vertical-lr</li>
+                <li>vertical-rl</li>
+                <li>sideways-rl</li>
+                <li>sideways-lr</li>
+            </ul>
+            <div class="orientation block ver">CSS <br> is <br> awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>horizontal-tb</li>
+                <li class="active">vertical-lr</li>
+                <li>vertical-rl</li>
+                <li>sideways-rl</li>
+                <li>sideways-lr</li>
+            </ul>
+            <div class="orientation block hor right" style="writing-mode: vertical-lr">CSS <br> is <br> awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>horizontal-tb</li>
+                <li>vertical-lr</li>
+                <li class="active">vertical-rl</li>
+                <li>sideways-rl</li>
+                <li>sideways-lr</li>
+            </ul>
+            <div class="orientation block hor" style="writing-mode: vertical-rl">CSS <br> is <br> awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>horizontal-tb</li>
+                <li>vertical-lr</li>
+                <li>vertical-rl</li>
+                <li class="active">sideways-rl</li>
+                <li>sideways-lr</li>
+            </ul>
+            <div class="orientation block hor" style="writing-mode: sideways-rl">CSS <br> is <br> awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>horizontal-tb</li>
+                <li>vertical-lr</li>
+                <li>vertical-rl</li>
+                <li>sideways-rl</li>
+                <li class="active">sideways-lr</li>
+            </ul>
+            <div class="orientation block hor right" style="writing-mode: sideways-lr">CSS <br> is <br> awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">direction</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li class="active">ltr</li>
+                <li>rtl</li>
+            </ul>
+            <div class="orientation inline" dir="ltr">CSS is awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">direction</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>ltr</li>
+                <li class="active">rtl</li>
+            </ul>
+            <div class="orientation inline left" dir="rtl">CSS is awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">direction</code></h2>
+        <div class="columns two">
+            <div class="orientation inline ver" style="writing-mode: vertical-lr;">CSS is awesome</div>
+            <div class="orientation inline ver left" dir="ltr" style="writing-mode: vertical-lr;">CSS is awesome</div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Лево сверху. Или право.</h2>
+        <p>В дополнение к координатам, про которые мы говорили, у любой строки еще есть право и лево. Определятся это примерно как стороны света.</p>
+    </section>
+
+    <section class="slide">
+        <p>Теперь мы можем управлять осями.</p>
+        <p>А как мы можем их использовать?</p>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">Вернемся к примеру из начала доклада</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Где должна быть граница?</h2>
+        <div style="margin-top: 1em">
+            <p class="example_border" dir="ltr">Large eggplants run after people in their sleep</p>
+            <p class="example_border" dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم</p>
+        </div>
+        <p class="next">Граница должна быть у начала строки.</p>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">Логические свойства</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Логические свойства</h2>
+        <p>Flow-Relative или Зависимые от потока свойства.</p>
+    </section>
+
+
+    <section class="slide" id="logical_size">
+        <h2>Размеры</h2>
+        <p>
+            <code>width, height</code> => <code>block-size, inline-size</code>
+        </p>
+        <div class="columns two">
+            <pre>
+                <code>p {</code>
+                <code>  block-size: 100px;</code>
+                <code>  inline-size: 150px;</code>
+                <code>}</code>
+            </pre>
+            <div>
+                <div class="border example">Hello everyone!</div>
+                <div class="border example" style="writing-mode: vertical-lr">こんにちは、みんな！</div>
+            </div>
+        </div>
+        <style>
+            #logical_size .example {
+                display: inline-block;
+                vertical-align: top;
+                block-size: 100px;
+                inline-size: 150px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Размеры</h2>
+        <p><code>width, height</code> => <code>block-size, inline-size</code></p>
+        <p><code>min-width, min-height</code> => <br><code>min-block-size, min-inline-size</code></p>
+        <p><code>max-width, max-height</code> => <br><code>max-block-size, max-inline-size</code></p>
+    </section>
+
+    <section class="slide">
+        <h2>Отступы</h2>
+        <div class="columns five">
+            <code>padding</code>
+            <div>
+                <code>-left</code>
+                <code>-right</code>
+                <code>-top</code>
+                <code>-bottom</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>padding</code>
+            <div>
+                <code>-inline-start</code>
+                <code>-inline-end</code>
+                <code>-block-start</code>
+                <code>-block-end</code>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="logical_padding_inline_start">
+        <h2>Отступы</h2>
+        <pre>
+            <code></code>
+            <code>padding-inline-start: 4em;</code>
+        </pre>
+        <div>
+            <div class="border example">Hello everyone!</div>
+            <div class="border example" style="writing-mode: vertical-lr">こんにちは、みんな！</div>
+            <div class="border example" dir="rtl">اهلا بالجميع!</div>
+        </div>
+        <style>
+            #logical_padding_inline_start .example {
+                padding-inline-start: 4em;
+                display: inline-block;
+                max-height: 150px;
+                vertical-align: top;
+                overflow: hidden;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="logical_padding_inline">
+        <h2>Отступы</h2>
+        <pre>
+            <code></code>
+            <code>padding-inline: 4em;</code>
+        </pre>
+        <div>
+            <div class="border example">Hello everyone!</div>
+            <div class="border example" style="writing-mode: vertical-lr">こんにちは、みんな！</div>
+            <div class="border example" dir="rtl">اهلا بالجميع!</div>
+        </div>
+        <style>
+            #logical_padding_inline .example {
+                padding-inline: 2em;
+                display: inline-block;
+                max-height: 150px;
+                vertical-align: top;
+                overflow: hidden;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Отступы</h2>
+        <div class="columns five">
+            <code>margin</code>
+            <div>
+                <code>-left</code>
+                <code>-right</code>
+                <code>-top</code>
+                <code>-bottom</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>margin</code>
+            <div>
+                <code>-inline-start</code>
+                <code>-inline-end</code>
+                <code>-block-start</code>
+                <code>-block-end</code>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Границы</h2>
+        <div class="columns five">
+            <code>border</code>
+            <div>
+                <code>-left</code>
+                <code>-right</code>
+                <code>-top</code>
+                <code>-bottom</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>border</code>
+            <div>
+                <code>-inline-start</code>
+                <code>-inline-end</code>
+                <code>-block-start</code>
+                <code>-block-end</code>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Границы</h2>
+        <div class="columns five small">
+            <code>border</code>
+            <div>
+                <code>-left-width</code>
+                <code>-right-width</code>
+                <code>-top-width</code>
+                <code>-bottom-width</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>border</code>
+            <div>
+                <code>-inline-start-width</code>
+                <code>-inline-end-width</code>
+                <code>-block-start-width</code>
+                <code>-block-end-width</code>
+            </div>
+        </div>
+
+        <div class="columns five small">
+            <code>border</code>
+            <div>
+                <code>-left-style</code>
+                <code>-right-style</code>
+                <code>-top-style</code>
+                <code>-bottom-style</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>border</code>
+            <div>
+                <code>-inline-start-style</code>
+                <code>-inline-end-style</code>
+                <code>-block-start-style</code>
+                <code>-block-end-style</code>
+            </div>
+        </div>
+
+        <div class="columns five small">
+            <code>border</code>
+            <div>
+                <code>-left-color</code>
+                <code>-right-color</code>
+                <code>-top-color</code>
+                <code>-bottom-color</code>
+            </div>
+            <div style="align-items: center">=></div>
+            <code>border</code>
+            <div>
+                <code>-inline-start-color</code>
+                <code>-inline-end-color</code>
+                <code>-block-start-color</code>
+                <code>-block-end-color</code>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="logical_border_inline_start">
+        <h2>Границы</h2>
+        <pre>
+            <code></code>
+            <code>border-inline-start: 0.2em solid lavender;</code>
+        </pre>
+        <div>
+            <div class="example">Hello everyone!</div>
+            <div class="example" style="writing-mode: vertical-lr">こんにちは、みんな！</div>
+            <div class="example" dir="rtl">اهلا بالجميع!</div>
+        </div>
+        <style>
+            #logical_border_inline_start .example {
+                border-inline-start: 0.2em solid lavender;
+                max-height: 150px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="logical_border_inline">
+        <h2>Границы</h2>
+        <pre>
+            <code></code>
+            <code>border-inline: 0.2em solid lavender;</code>
+        </pre>
+        <div>
+            <div class="example">Hello everyone!</div>
+            <div class="example" style="writing-mode: vertical-lr">こんにちは、みんな！</div>
+            <div class="example" dir="rtl">اهلا بالجميع!</div>
+        </div>
+        <style>
+            #logical_border_inline .example {
+                border-inline: 0.2em solid lavender;
+                max-height: 150px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Позиционирование</h2>
+        <p>При <code>position: absolute</code> обычно используются <code>left, right, top, bottom</code>.</p>
+        <p>Но теперь есть новое свойство <code>inset</code>.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Позиционирование: <code>inset</code></h2>
+        <pre>
+            <code>inset-block-start</code>
+            <code>inset-block-end</code>
+            <code>inset-inline-start</code>
+            <code>inset-inline-end</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Позиционирование: <code>inset</code></h2>
+        <pre>
+            <code>inset-block</code>
+            <code>inset-inline</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Позиционирование: <code>inset</code></h2>
+        <div class="columns two">
+            <pre>
+                <code>left: 0</code>
+                <code>right: 0</code>
+                <code>top: 0</code>
+                <code>bottom: 0</code>
+            </pre>
+            <pre>
+                <code>inset: 0</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Новые значение</h2>
+        <ul>
+            <li><code>caption-side</code></li>
+            <li><code>float, clear</code></li>
+            <li><code>text-align</code></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h3 style="margin: 0">Всё про box sizing</h3>
+        <ul>
+            <li>размеры</li>
+            <li>отступы</li>
+            <li>границы</li>
+        </ul>
+        <h3 style="margin: 0">Всё про box model</h3>
+        <ul>
+            <li>позиционирование</li>
+            <li>обтекание</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">А что с поддержкой?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Поддержка хорошая</h2>
+        <img src="./accest/logicalproperties_can_i_use.png" alt="" class="full_image">
+    </section>
+
+    <section class="slide">
+        <h2>StyleLint <a href="https://www.npmjs.com/package/stylelint-use-logical">плагин</a></h2>
+        <pre>
+            <code>p {</code>
+            <code class="bad">  padding-left: 1em;</code>
+            <code class="good">  padding-left: 1em;</code>
+            <code>}</code>
+            <code class="good">p:dir(ltr) { padding-left: 2em; }</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Post CSS <a href="https://www.npmjs.com/package/postcss-logical">плагин</a></h2>
+        <div class="columns two">
+            <pre class="small"><code>.banner {
+  color: #222222;
+  padding-inline: 20px 40px;
+  transition: color 200ms;
+}</code></pre>
+            <pre class="smallest"><code>.banner:dir(ltr) {
+  padding-left: 20px;
+  padding-right: 40px;
+}
+.banner:dir(rtl) {
+  padding-right: 20px;
+  padding-left: 40px;
+}
+.banner {
+  color: #222222;
+  transition: color 200ms;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Post CSS <a href="https://www.npmjs.com/package/postcss-logical">плагин</a></h2>
+        <p>Псевдокласса на вертикальность написания <strong>нет</strong>.</p>
+        <p>Поэтому для поддержки вертикального написания либо отдельный класс на body и отдельная версия стилей,
+            либо логические свойства.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Итого</h2>
+        <ul>
+            <li>Физическая система координат не походит для стилизации текстового контента</li>
+            <li>Удобнее использовать flows relative</li>
+            <li>Её осями можно управлять</li>
+            <li>Лучше использовать логические свойства, чем не использовать</li>
+            <li>Не только, потому что они зависимы от потока</li>
+            <li>Для этого есть инструменты</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>София Валитова из <a href="https://cube.dev/">Cube</a></h2>
+        <ul class="small">
+            <li><a>ariarzer@gmail.com</a></li>
+            <li>Twitter – <a href="https://twitter.com/ariarzer" target="_blank">@ariarzer</a></li>
+            <li>ВКонтакте – <a href="https://vk.com/ariarzer" target="_blank">@ariarzer</a></li>
+            <li>Telegram – <a href="https://t.me/ariarzer" target="_blank">@ariarzer</a></li>
+            <li>Мой канал про css – <a href="https://t.me/css_mind" target="_blank">@css_mind</a></li>
+            <li>Мой блог про css – <a href="https://ariarzer.dev" target="_blank">ariarzer.dev</a></li>
+            <li>Patreon – <a href="https://www.patreon.com/ariarzer" target="_blank">@ariarzer</a></li>
+        </ul>
+
+        <p class="small">Презентация сделана с помощью <a href="https://shwr.me/">Shower</a>.</p>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>
+
+
