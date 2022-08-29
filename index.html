@@ -84,15 +84,39 @@
         <h2 class="shout shrink small">4 режима письма</h2>
     </section>
 
-    <section class="slide">
+    <section class="slide lists">
         <h2>Слева направо cверху вниз - LTR</h2>
-        <div></div>
+        <p>What do we need to make a cake:</p>
+        <ul>
+            <li>flour</li>
+            <li>eggs</li>
+            <li>milk</li>
+        </ul>
+        <p> Everything must be mixed in equal proportions and baked in the oven over low heat. Serve with fruit and whipped cream.</p>
     </section>
-    <section class="slide">
+    <section class="slide lists">
         <h2>Справа налево cверху вниз - RTL</h2>
+        <div style="direction: rtl">
+            <p>ماذا نحتاج لعمل كعكة:</p>
+            <ul>
+                <li>دقيق</li>
+                <li>بيض</li>
+                <li>الحليب</li>
+            </ul>
+            <p>                يجب خلط كل شيء بنسب متساوية وخبزه في الفرن على نار خفيفة. تقدم مع الفاكهة والكريمة المخفوقة.</p>
+        </div>
     </section>
-    <section class="slide">
+    <section class="slide lists">
         <h2>Сверху вниз справа налево</h2>
+        <div style="writing-mode: vertical-rl; max-height: 400px; width: 100%">
+            <p> ケーキを作るために必要なもの：</p>
+            <ul>
+                <li>小麦粉</li>
+                <li>卵</li>
+                <li>ミルク</li>
+            </ul>
+            <p> すべてを同じ割合で混ぜ合わせ、弱火でオーブンで焼く必要があります。 フルーツとホイップクリームを添えて。</p>
+        </div>
     </section>
     <section class="slide">
         <h2>Сверху вниз слева направо</h2>
@@ -118,9 +142,9 @@
     <section class="slide">
         <h2>Простой пример</h2>
         <pre>
-            <code>p dir="ltr">Large eggplants run after people in
-      their dreams /p></code>
-            <code>p dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم /p></code>
+            <code>&lt;p dir="ltr">Large eggplants run after people in
+      their dreams &lt;/p></code>
+            <code>&lt;p dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم &lt;/p></code>
         </pre>
     </section>
 
@@ -246,8 +270,7 @@
     </section>
 
     <section class="slide">
-        <h2>Плохо подходит для текста</h2>
-
+        <h2 class="shout shrink small">Плохо подходит для текста</h2>
     </section>
 
     <section class="slide">
@@ -297,6 +320,28 @@
     </section>
 
     <section class="slide">
+        <h2><code class="small">direction</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li class="active">ltr</li>
+                <li>rtl</li>
+            </ul>
+            <img src="/accest/ltr_eng.png" alt="" class="side_image">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2><code class="small">direction</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>ltr</li>
+                <li class="active">rtl</li>
+            </ul>
+            <img src="/accest/rtl_eng.png" alt="" class="side_image">
+        </div>
+    </section>
+
+    <section class="slide">
         <h2><code class="small">writing-mode</code></h2>
         <div class="columns two">
             <ul class="activeList">
@@ -306,7 +351,7 @@
                 <li>sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <div class="orientation block ver">CSS <br> is <br> awesome</div>
+            <img src="/accest/horisontal-tb_ltr.png" alt="" class="side_image">
         </div>
     </section>
 
@@ -320,8 +365,13 @@
                 <li>sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <div class="orientation block hor right" style="writing-mode: vertical-lr">CSS <br> is <br> awesome</div>
+            <img src="/accest/vertical-rl_ltr.png" alt="" class="side_image">
+            <img src="/accest/" alt="" class="side_image">
         </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">А как же <code>direction</code>?</h2>
     </section>
 
     <section class="slide">
@@ -334,36 +384,33 @@
                 <li>sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <div class="orientation block hor" style="writing-mode: vertical-rl">CSS <br> is <br> awesome</div>
+            <img src="/accest/compas_vertical_ltr.png" alt="" class="side_image">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Типографический режим</h2>
-        <p>Это концепция, отличающая вертикальный набор текста от горизонтального набора с поворотом.</p>
-    </section>
-
-    <section class="slide">
-        <h2>Типографический режим</h2>
-        <div class="columns two" style="font-size: 2em; line-height: 1.2">
-            <p style=" transform: rotate(90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
-            <p style="writing-mode: vertical-rl; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
+        <h2>Лево сверху. Или право.</h2>
+        <div class="columns two">
+            <img src="/accest/vertical-rl_ltr.png" alt="" class="side_image">
+            <img src="/accest/vertical-rl_rtl.png" alt="" class="side_image">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Типографический режим</h2>
-        <div class="columns two" style="font-size: 2em; line-height: 1.2">
-            <p style=" transform: rotate(-90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
-            <p style="writing-mode: vertical-lr; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
+        <h2>Лево сверху. Или право.</h2>
+        <p>У любой строки еще право и лево. Примерно как стороны света.</p>
+        <div class="columns two">
+            <img src="/accest/compas_horisontal_ltr.png" alt="" class="side_image">
+            <img src="/accest/compas_horisontal_rtl.png" alt="" class="side_image">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Типографический режим</h2>
-        <div class="columns two" style="font-size: 2em; line-height: 1.2">
-            <p style=" transform: rotate(-90deg); max-width: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>
-            <p style="writing-mode: vertical-lr; max-height: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>
+        <h2>Лево сверху. Или право.</h2>
+        <p>У любой строки еще право и лево. Примерно как стороны света.</p>
+        <div class="columns two">
+            <img src="/accest/compas_vertical_ltr.png" alt="" class="side_image">
+            <img src="/accest/compas_vertical_rtl.png" alt="" class="side_image">
         </div>
     </section>
 
@@ -375,9 +422,43 @@
                 <li>vertical-lr</li>
                 <li>vertical-rl</li>
                 <li class="active">sideways-rl</li>
+                <li class="active">sideways-lr</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+        <p>Это концепция, отличающая вертикальный набор текста от горизонтального набора с поворотом.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+        <div class="columns two" style="font-size: 2em; line-height: 1.2">
+            <p style=" transform: rotate(-90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
+            <p style="writing-mode: vertical-lr; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
+        </div>
+    </section>
+
+<!--    <section class="slide">-->
+<!--        <h2>Типографический режим</h2>-->
+<!--        <div class="columns two" style="font-size: 2em; line-height: 1.2">-->
+<!--            <p style=" transform: rotate(-90deg); max-width: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>-->
+<!--            <p style="writing-mode: vertical-lr; max-height: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <section class="slide">
+        <h2><code class="small">writing-mode</code></h2>
+        <div class="columns two">
+            <ul class="activeList">
+                <li>horizontal-tb</li>
+                <li>vertical-lr</li>
+                <li>vertical-rl</li>
+                <li class="active">sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <div class="orientation block hor" style="writing-mode: sideways-rl">CSS <br> is <br> awesome</div>
+            <img src="/accest/sideways-rl_ltr.png" alt="" class="side_image">
         </div>
     </section>
 
@@ -391,48 +472,13 @@
                 <li>sideways-rl</li>
                 <li class="active">sideways-lr</li>
             </ul>
-            <div class="orientation block hor right" style="writing-mode: sideways-lr">CSS <br> is <br> awesome</div>
+            <img src="/accest/sideways-lr_ltr.png" alt="" class="side_image">
         </div>
     </section>
 
     <section class="slide">
-        <h2><code class="small">direction</code></h2>
-        <div class="columns two">
-            <ul class="activeList">
-                <li class="active">ltr</li>
-                <li>rtl</li>
-            </ul>
-            <div class="orientation inline" dir="ltr">CSS is awesome</div>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2><code class="small">direction</code></h2>
-        <div class="columns two">
-            <ul class="activeList">
-                <li>ltr</li>
-                <li class="active">rtl</li>
-            </ul>
-            <div class="orientation inline left" dir="rtl">CSS is awesome</div>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2><code class="small">direction</code></h2>
-        <div class="columns two">
-            <div class="orientation inline ver" style="writing-mode: vertical-lr;">CSS is awesome</div>
-            <div class="orientation inline ver left" dir="ltr" style="writing-mode: vertical-lr;">CSS is awesome</div>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2>Лево сверху. Или право.</h2>
-        <p>В дополнение к координатам, про которые мы говорили, у любой строки еще есть право и лево. Определятся это примерно как стороны света.</p>
-    </section>
-
-    <section class="slide">
-        <p>Теперь мы можем управлять осями.</p>
-        <p>А как мы можем их использовать?</p>
+        <h2>Теперь мы можем управлять осями.</h2>
+        <h2 class="next">А как мы можем их использовать?</h2>
     </section>
 
     <section class="slide">
@@ -453,10 +499,12 @@
     </section>
 
     <section class="slide">
-        <h2>Логические свойства</h2>
-        <p>Flow-Relative или Зависимые от потока свойства.</p>
+        <img src="/accest/sizing-ltr-tb.svg" alt="" class="full_image" style="height: 90%">
     </section>
 
+    <section class="slide">
+        <img src="/accest/sizing-ttb-rl.svg" alt="" class="full_image" style="height: 90%">
+    </section>
 
     <section class="slide" id="logical_size">
         <h2>Размеры</h2>
@@ -531,6 +579,27 @@
                 max-height: 150px;
                 vertical-align: top;
                 overflow: hidden;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="padding_two_side">
+        <h2>Отступы с двух сторон</h2>
+        <div class="columns two">
+            <div>
+                <pre class="next next-light true"><code>padding: 0 60px;</code></pre>
+            </div>
+            <div>
+                <pre><code>padding: 60px 0;</code></pre>
+            </div>
+        </div>
+        <p class="example1 border">Hello</p>
+        <style>
+            #padding_two_side .example1{
+                text-align: center;
+                display: inline-block;
+                width: 300px;
+                margin-top: 2em;
             }
         </style>
     </section>
@@ -718,28 +787,103 @@
         </pre>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="inset_example_1">
         <h2>Позиционирование: <code>inset</code></h2>
         <div class="columns two">
             <pre>
+                <code>position: absolute;</code>
                 <code>left: 0</code>
                 <code>right: 0</code>
                 <code>top: 0</code>
                 <code>bottom: 0</code>
             </pre>
+            <div class="example"></div>
+        </div>
+
+        <style>
+            #inset_example_1 .example {
+                height: 200px;
+                border: 0.1em solid;
+
+                box-shadow: inset 0 0 0 10px red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="inset_example_2">
+        <h2>Позиционирование: <code>inset</code></h2>
+        <div class="columns two">
             <pre>
+                <code>position: absolute;</code>
                 <code>inset: 0</code>
             </pre>
+            <div class="example"></div>
+        </div>
+
+        <style>
+            #inset_example_2 .example {
+                height: 200px;
+                border: 0.1em solid;
+
+                box-shadow: inset 0 0 0 10px red;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Новые значение</h2>
+        <ol class="activeList">
+            <li class="active"><code>caption-side</code></li>
+            <li><code>float, clear</code></li>
+            <li><code>text-align</code></li>
+        </ol>
+        <div class="columns two">
+            <p>
+                <code>top</code>,<code>bottom</code>
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.5em;">
+                <code>block-start</code>
+                <code>block-end</code>
+                <code>inline-start</code>
+                <code>inline-end</code>
+            </div>
         </div>
     </section>
 
     <section class="slide">
         <h2>Новые значение</h2>
-        <ul>
+        <ol class="activeList">
+            <li><code>caption-side</code></li>
+            <li class="active"><code>float, clear</code></li>
+            <li><code>text-align</code></li>
+        </ol>
+
+        <div class="columns two">
+            <p>
+                <code>left</code>,<code>right</code>
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.5em;">
+                <code>inline-start</code><code>inline-end</code>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Новые значение</h2>
+        <ol class="activeList">
             <li><code>caption-side</code></li>
             <li><code>float, clear</code></li>
-            <li><code>text-align</code></li>
-        </ul>
+            <li class="active"><code>text-align</code></li>
+        </ol>
+
+        <div class="columns two">
+            <p>
+                <code>left</code>,<code>right</code>
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.5em;">
+                <code>inline-start</code> <code>inline-end</code>
+            </div>
+        </div>
     </section>
 
     <section class="slide">
@@ -757,15 +901,6 @@
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink small">А что с поддержкой?</h2>
-    </section>
-
-    <section class="slide">
-        <h2>Поддержка хорошая</h2>
-        <img src="./accest/logicalproperties_can_i_use.png" alt="" class="full_image">
-    </section>
-
-    <section class="slide">
         <h2>StyleLint <a href="https://www.npmjs.com/package/stylelint-use-logical">плагин</a></h2>
         <pre>
             <code>p {</code>
@@ -774,6 +909,15 @@
             <code>}</code>
             <code class="good">p:dir(ltr) { padding-left: 2em; }</code>
         </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">А что с поддержкой?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Поддержка хорошая</h2>
+        <img src="./accest/logicalproperties_can_i_use.png" alt="" class="full_image">
     </section>
 
     <section class="slide">
@@ -817,6 +961,11 @@
             <li>Не только, потому что они зависимы от потока</li>
             <li>Для этого есть инструменты</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Дальше больше</h2>
+        <img src="/accest/mongolian-lr.jpeg" alt="" class="full_image" style="margin-top: 3em">
     </section>
 
     <section class="slide">

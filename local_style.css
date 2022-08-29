@@ -7,7 +7,8 @@
     opacity: 0.5;
 }
 
-.activeList .active {
+.activeList .active,
+.activeList .active * {
     opacity: initial;
 }
 
@@ -20,4 +21,16 @@
     padding: 0.3em;
     display: inline-block;
     vertical-align: top;
+}
+
+.lists li::before {
+    content: none !important;
+}
+
+.lists ul {
+    list-style: conic-gradient;
+}
+
+.side_image {
+    height: 350px;
 }
