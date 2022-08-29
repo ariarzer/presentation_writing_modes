@@ -85,11 +85,11 @@
     </section>
 
     <section class="slide">
-        <h2>Слева направо cверху вниз</h2>
+        <h2>Слева направо cверху вниз - LTR</h2>
         <div></div>
     </section>
     <section class="slide">
-        <h2>Справа налево cверху вниз </h2>
+        <h2>Справа налево cверху вниз - RTL</h2>
     </section>
     <section class="slide">
         <h2>Сверху вниз справа налево</h2>
@@ -108,6 +108,23 @@
     </section>
 
     <section class="slide">
+        <h2>Аттрибут<code>dir</code></h2>
+        <div style="font-size: 2em; margin-top: 1em" class="">
+            <p class="example_border" dir="ltr">dir="ltr"</p>
+            <p class="example_border"  dir="rtl">dir="rtl"</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Простой пример</h2>
+        <pre>
+            <code>p dir="ltr">Large eggplants run after people in
+      their dreams /p></code>
+            <code>p dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم /p></code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <h2>Стили для английского:</h2>
         <pre>
             <code>p { border-left: 5px solid lavender; }</code>
@@ -115,6 +132,30 @@
         <h2>Стили для арабского:</h2>
         <pre>
             <code>p { border-right: 5px solid lavender; }</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="small">
+            <code>p {</code>
+            <code>  border-color: lavender;</code>
+            <code>  border-width: 3px;</code>
+            <code>}</code>
+            <code>[dir="ltr"]p {</code>
+            <code>  border-left-style: solid;</code>
+            <code>}</code>
+            <code>[dir="rtl"]p {</code>
+            <code>  border-right-style: solid;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Как это обычно бывает на самом деле:</h2>
+        <pre class="small">
+            <code>p {</code>
+            <code>  border: 3px solid lavander;</code>
+            <code>}</code>
         </pre>
     </section>
 
@@ -135,13 +176,13 @@
     </section>
 
     <section class="slide">
-        <h2>Если делать это руками:</h2>
+        <h2>Чуть получше...</h2>
         <pre class="small">
             <code>div {</code>
             <code>  border-color: lavender;</code>
             <code>  border-width: 3px;</code>
             <code>}</code>
-            <code>div:dir(lrt) {</code>
+            <code>div:dir(ltr) {</code>
             <code>  border-left-style: solid;</code>
             <code>}</code>
             <code>div:dir(rtl) {</code>
@@ -151,7 +192,7 @@
     </section>
 
     <section class="slide">
-        <h2>У <code>:dir()</code> плохая поддержка</h2>
+        <h2>Чуть получше могло бы быть :((</h2>
         <img src="./accest/dir_can_i_use.png" alt="" class="full_image" style="margin-top: 2em">
     </section>
 
@@ -214,15 +255,41 @@
     </section>
 
     <section class="slide">
-        <h2>Направление потока блоков</h2>
+        <h2>Как можно описать режим письма?</h2>
+        <ul>
+            <li>Куда направлена строка.</li>
+            <li>Куда будет переноситься строка, если в одну строку текст не влезет.</li>
+            <li>Куда ориентированы буквы в строке.</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>Ориентация строки</h2>
+        <img src="https://pbs.twimg.com/media/FahcWSqUYAA5hpp?format=png&name=large" alt=""
+             class="full_image" style="height: 400px">
+    </section>
+
+    <section class="slide">
+        <h2>Направление потока блоков</h2>
+        <img src="https://ru.ariarzer.dev/articles/2022/img/css-coordinate-system/block-flow-vertical_2024.png"
+             alt="" class="full_image" style="height: 400px; margin-top: 2em">
+    </section>
+
+    <section class="slide">
+        <h2>Направление потока блоков</h2>
+        <img src="https://ru.ariarzer.dev/articles/2022/img/css-coordinate-system/block-flow-horizontal_2024.png"
+             alt="" class="full_image" style="height: 400px; margin-top: 2em">
     </section>
 
     <section class="slide">
         <h2>Направление строки</h2>
+        <img src="https://ru.ariarzer.dev/articles/2022/img/css-coordinate-system/inline-base_2024.png"
+             alt="" class="full_image" style="height: 400px; margin-top: 2em">
+    </section>
+
+    <section class="slide">
+        <h2>Ориентация строки</h2>
+        <img src="https://ru.ariarzer.dev/articles/2022/img/css-coordinate-system/line-orientation_2024.png"
+             alt="" class="full_image" style="height: 400px; margin-top: 2em">
     </section>
 
     <section class="slide">
@@ -273,6 +340,31 @@
 
     <section class="slide">
         <h2>Типографический режим</h2>
+        <p>Это концепция, отличающая вертикальный набор текста от горизонтального набора с поворотом.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+        <div class="columns two" style="font-size: 2em; line-height: 1.2">
+            <p style=" transform: rotate(90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
+            <p style="writing-mode: vertical-rl; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+        <div class="columns two" style="font-size: 2em; line-height: 1.2">
+            <p style=" transform: rotate(-90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
+            <p style="writing-mode: vertical-lr; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Типографический режим</h2>
+        <div class="columns two" style="font-size: 2em; line-height: 1.2">
+            <p style=" transform: rotate(-90deg); max-width: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>
+            <p style="writing-mode: vertical-lr; max-height: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>
+        </div>
     </section>
 
     <section class="slide">
@@ -678,7 +770,7 @@
         <pre>
             <code>p {</code>
             <code class="bad">  padding-left: 1em;</code>
-            <code class="good">  padding-left: 1em;</code>
+            <code class="good">  padding-inline: 1em;</code>
             <code>}</code>
             <code class="good">p:dir(ltr) { padding-left: 2em; }</code>
         </pre>
@@ -717,12 +809,20 @@
     <section class="slide">
         <h2>Итого</h2>
         <ul>
-            <li>Физическая система координат не походит для стилизации текстового контента</li>
+            <li>Языков много</li>
+            <li>Физическая система координат не походит для стилизации текста</li>
             <li>Удобнее использовать flows relative</li>
             <li>Её осями можно управлять</li>
             <li>Лучше использовать логические свойства, чем не использовать</li>
             <li>Не только, потому что они зависимы от потока</li>
             <li>Для этого есть инструменты</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Источники</h2>
+        <ul>
+
         </ul>
     </section>
 
