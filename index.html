@@ -23,8 +23,11 @@
     </header>
 
     <section class="slide blog" id="myself">
-        <img src="accest/blog.png" alt="" class="full_image">
-        <h2 class="shout" style="">Меня зовут София. Я - CSS инженер.</h2>
+        <img src="accest/blog.png" alt="" class="full_image blog">
+        <h2 class="shout" style="">Меня зовут София. Я - CSS инженер.
+            <img src="accest/logo.svg" alt="" class="logo"></h2>
+
+        </div>
     </section>
 
     <section class="slide" id="head">
@@ -92,7 +95,8 @@
             <li>eggs</li>
             <li>milk</li>
         </ul>
-        <p> Everything must be mixed in equal proportions and baked in the oven over low heat. Serve with fruit and whipped cream.</p>
+        <p> Everything must be mixed in equal proportions and baked in the oven over low heat. Serve with fruit and
+            whipped cream.</p>
     </section>
     <section class="slide lists">
         <h2>Справа налево cверху вниз - RTL</h2>
@@ -103,7 +107,7 @@
                 <li>بيض</li>
                 <li>الحليب</li>
             </ul>
-            <p>                يجب خلط كل شيء بنسب متساوية وخبزه في الفرن على نار خفيفة. تقدم مع الفاكهة والكريمة المخفوقة.</p>
+            <p> يجب خلط كل شيء بنسب متساوية وخبزه في الفرن على نار خفيفة. تقدم مع الفاكهة والكريمة المخفوقة.</p>
         </div>
     </section>
     <section class="slide lists">
@@ -135,16 +139,19 @@
         <h2>Аттрибут<code>dir</code></h2>
         <div style="font-size: 2em; margin-top: 1em" class="">
             <p class="example_border" dir="ltr">dir="ltr"</p>
-            <p class="example_border"  dir="rtl">dir="rtl"</p>
+            <p class="example_border" dir="rtl">dir="rtl"</p>
         </div>
     </section>
 
     <section class="slide">
         <h2>Простой пример</h2>
         <pre>
-            <code>&lt;p dir="ltr">Large eggplants run after people in
-      their dreams &lt;/p></code>
-            <code>&lt;p dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم &lt;/p></code>
+            <code>&lt;p dir="ltr"></code>
+            <code>  Large eggplants run after people in their dreams</code>
+            <code>&lt;/p></code>
+            <code>&lt;p dir="rtl"></code>
+            <code>  الباذنجان الكبير يلاحق الناس في نومهم  </code>
+            <code>&lt;/p></code>
         </pre>
     </section>
 
@@ -184,7 +191,7 @@
     </section>
 
     <section class="slide">
-        <h2>Берём <a href="https://www.npmjs.com/package/postcss-rtl">PostCSS плагин</a>:</h2>
+        <h2>Берём плагин <a href="https://www.npmjs.com/package/postcss-rtl">postcss-rtl</a>:</h2>
         <pre class="small">
             <code>[dir] div {</code>
             <code>  border-color: lavender;</code>
@@ -316,6 +323,11 @@
     </section>
 
     <section class="slide">
+        <img src="https://pbs.twimg.com/media/FahcWSqUYAA5hpp?format=png&name=large" alt=""
+             class="full_image" style="height: 400px">
+    </section>
+
+    <section class="slide">
         <h2 class="shout shrink small">Как можно влиять на эти три оси?</h2>
     </section>
 
@@ -365,13 +377,9 @@
                 <li>sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <img src="/accest/vertical-rl_ltr.png" alt="" class="side_image">
+            <img src="/accest/vertical-lr_ltr.png" alt="" class="side_image">
             <img src="/accest/" alt="" class="side_image">
         </div>
-    </section>
-
-    <section class="slide">
-        <h2 class="shout shrink small">А как же <code>direction</code>?</h2>
     </section>
 
     <section class="slide">
@@ -384,8 +392,12 @@
                 <li>sideways-rl</li>
                 <li>sideways-lr</li>
             </ul>
-            <img src="/accest/compas_vertical_ltr.png" alt="" class="side_image">
+            <img src="/accest/vertical-rl_ltr.png" alt="" class="side_image">
         </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink small">А как же <code>direction</code>?</h2>
     </section>
 
     <section class="slide">
@@ -398,7 +410,6 @@
 
     <section class="slide">
         <h2>Лево сверху. Или право.</h2>
-        <p>У любой строки еще право и лево. Примерно как стороны света.</p>
         <div class="columns two">
             <img src="/accest/compas_horisontal_ltr.png" alt="" class="side_image">
             <img src="/accest/compas_horisontal_rtl.png" alt="" class="side_image">
@@ -407,7 +418,6 @@
 
     <section class="slide">
         <h2>Лево сверху. Или право.</h2>
-        <p>У любой строки еще право и лево. Примерно как стороны света.</p>
         <div class="columns two">
             <img src="/accest/compas_vertical_ltr.png" alt="" class="side_image">
             <img src="/accest/compas_vertical_rtl.png" alt="" class="side_image">
@@ -432,21 +442,33 @@
         <p>Это концепция, отличающая вертикальный набор текста от горизонтального набора с поворотом.</p>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="typographic_mode">
         <h2>Типографический режим</h2>
-        <div class="columns two" style="font-size: 2em; line-height: 1.2">
-            <p style=" transform: rotate(-90deg); max-width: 300px">Этот текст просто повернут на бок.</p>
-            <p style="writing-mode: vertical-lr; max-height: 300px">Этот текст написан в вертикальном режиме письма.</p>
-        </div>
-    </section>
+        <div class="columns two">
+            <div style="width: 300px">
+                <p style=" transform: rotate(-90deg);" class="example">Этот текст просто повернут на бок.</p>
+                <p class="small">Этот текст просто повернут на бок</p>
+            </div>
+            <div style="width: 450px">
+                <p style="writing-mode: vertical-lr;"  class="example">
+                    Этот текст написан в вертикальном режиме письма.</p>
+                <p class="small">Этот текст написан в вертикальном режиме</p>
+            </div>
 
-<!--    <section class="slide">-->
-<!--        <h2>Типографический режим</h2>-->
-<!--        <div class="columns two" style="font-size: 2em; line-height: 1.2">-->
-<!--            <p style=" transform: rotate(-90deg); max-width: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>-->
-<!--            <p style="writing-mode: vertical-lr; max-height: 300px">カフェでお会いしましょう 2022 年 10 月 12 日</p>-->
-<!--        </div>-->
-<!--    </section>-->
+        </div>
+        <style>
+            #typographic_mode .example {
+                min-height: 250px;
+                display: block;
+                max-height: 250px;
+                height: 250px;
+                font-size: 2em;
+                line-height: 1.2;
+                margin: 0;
+                margin-bottom: 1em;
+            }
+        </style>
+    </section>
 
     <section class="slide">
         <h2><code class="small">writing-mode</code></h2>
@@ -585,22 +607,56 @@
 
     <section class="slide" id="padding_two_side">
         <h2>Отступы с двух сторон</h2>
-        <div class="columns two">
+        <div class="columns two" style="text-align: center; font-size: 1.3em;margin-top: 2em">
             <div>
-                <pre class="next next-light true"><code>padding: 0 60px;</code></pre>
+                <code class="next next-light true quiz">padding: 0 60px;</code>
             </div>
             <div>
-                <pre><code>padding: 60px 0;</code></pre>
+                <code class="quiz quiz1">padding: 60px 0;</code>
             </div>
         </div>
-        <p class="example1 border">Hello</p>
+        <p class="example1 border quiz_example">Hello</p>
         <style>
-            #padding_two_side .example1{
+            #padding_two_side .example1 {
                 text-align: center;
                 display: inline-block;
-                width: 300px;
-                margin-top: 2em;
+                width: 400px;
+                margin-top: 100px;
+                font-size: 2em;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
             }
+
+            #padding_two_side .quiz{
+                animation-name: quiz;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes quiz {
+                50% {
+                    text-shadow: 0 0 1em var(--ORANGE);
+                    color: var(--ORANGE);
+                }
+            }
+
+            #padding_two_side .quiz1 {
+                animation-delay: 1s;
+            }
+
+            #padding_two_side .quiz_example {
+                --ORANGE: #E6AE4844;
+                animation-name: quiz_example;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            /*@keyframes quiz_example {*/
+            /*    50% {*/
+            /*        box-shadow: inset 50px -50px 10px 10px var(--ORANGE),inset -50px 0 10px 10px var(--ORANGE) ;*/
+            /*    }*/
+            /*}*/
         </style>
     </section>
 
@@ -742,6 +798,48 @@
                 max-height: 150px;
             }
         </style>
+    </section>
+
+    <section class="slide" id="logical_border_inline_start_eggplant">
+        <h2>Границы</h2>
+        <pre>
+            <code></code>
+            <code>border-inline-start: 0.2em solid lavender;</code>
+        </pre>
+        <div>
+            <p class="example_border" dir="ltr">Large eggplants run after people in their sleep</p>
+            <p class="example_border" dir="rtl">الباذنجان الكبير يلاحق الناس في نومهم</p>
+        </div>
+        <style>
+            #logical_border_inline_start_eggplant .example_border {
+                border-inline-start: 0.2em solid lavender;
+                max-height: 150px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Логические 🥰💄🥳 свойства 🤩🥵💅</h2>
+        <div class="columns two" style="margin-top: 2.5em">
+            <pre class="smallest">
+                <code>div {</code>
+                <code>  border-color: lavender;</code>
+                <code>  border-width: 3px;</code>
+                <code>}</code>
+                <code>div:dir(ltr) {</code>
+                <code>  border-left-style: solid;</code>
+                <code>}</code>
+                <code>div:dir(rtl) {</code>
+                <code>  border-right-style: solid;</code>
+                <code>}</code>
+            </pre>
+            <pre class="small">
+                <code>div {</code>
+                <code>  border-inline-start: </code>
+                <code>    0.2em solid lavender;</code>
+                <code>}</code>
+            </pre>
+        </div>
     </section>
 
     <section class="slide" id="logical_border_inline">
@@ -901,17 +999,6 @@
     </section>
 
     <section class="slide">
-        <h2>StyleLint <a href="https://www.npmjs.com/package/stylelint-use-logical">плагин</a></h2>
-        <pre>
-            <code>p {</code>
-            <code class="bad">  padding-left: 1em;</code>
-            <code class="good">  padding-inline: 1em;</code>
-            <code>}</code>
-            <code class="good">p:dir(ltr) { padding-left: 2em; }</code>
-        </pre>
-    </section>
-
-    <section class="slide">
         <h2 class="shout shrink small">А что с поддержкой?</h2>
     </section>
 
@@ -946,8 +1033,22 @@
     <section class="slide">
         <h2>Post CSS <a href="https://www.npmjs.com/package/postcss-logical">плагин</a></h2>
         <p>Псевдокласса на вертикальность написания <strong>нет</strong>.</p>
-        <p>Поэтому для поддержки вертикального написания либо отдельный класс на body и отдельная версия стилей,
-            либо логические свойства.</p>
+        <p>Поэтому есть два пути:</p>
+        <ul>
+            <li>статус-класс на body и отдельная версия стилей</li>
+            <li>логические свойства 🥰</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>StyleLint <a href="https://www.npmjs.com/package/stylelint-use-logical">плагин</a></h2>
+        <pre>
+            <code>p {</code>
+            <code class="bad">  padding-left: 1em;</code>
+            <code class="good">  padding-inline: 1em;</code>
+            <code>}</code>
+            <code class="good">p:dir(ltr) { padding-left: 2em; }</code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -969,9 +1070,22 @@
     </section>
 
     <section class="slide">
+        <h2>Дальше больше</h2>
+        <img src="https://drafts.csswg.org/css-writing-modes/diagrams/bidi.png" alt=""
+             class="full_image" style="margin-top: 3em; width: 400px; background-color: white">
+    </section>
+
+    <section class="slide">
+        <h2>Дальше больше</h2>
+        <img src="https://drafts.csswg.org/css-writing-modes/images/vertical-form.png" alt=""
+             class="full_image" style="margin-top: 3em; width: 250px">
+    </section>
+
+    <section class="slide">
         <h2>Источники</h2>
         <ul>
-
+            <li><a href="https://www.w3.org/TR/css-writing-modes-4">Спецификация</a></li>
+            <li>Сайт на <a href="https://president.mn/mng/">старомонгольском</a></li>
         </ul>
     </section>
 
